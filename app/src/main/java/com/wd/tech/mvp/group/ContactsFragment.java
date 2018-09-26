@@ -1,4 +1,4 @@
-package com.wd.tech.mvp;
+package com.wd.tech.mvp.group;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,11 +12,11 @@ import com.wd.tech.R;
 /**
  * author:Created by YangYong on 2018/9/24 0024.
  */
-public class CommunityFragment extends Fragment {
+public class ContactsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.community_fg, container, false);
+        View view = inflater.inflate(R.layout.contacts_fg, container, false);
         return view;
     }
 
