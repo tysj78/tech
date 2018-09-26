@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 .addTabItem("群组", R.drawable.group, GroupFragment.class)
                 .addTabItem("我的", R.drawable.my, MyFragment.class)
                 .isShowDivider(false);
+
     }
 
     //沉浸式，颜色可以根据需要修改
