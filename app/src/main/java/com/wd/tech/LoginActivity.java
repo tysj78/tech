@@ -1,7 +1,6 @@
 package com.wd.tech;
 
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,9 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.adapter.EMAChatClient;
 import com.wd.tech.base.BaseActivity;
 import com.wd.tech.bean.GetUserInfoByUserIdBean;
 import com.wd.tech.bean.LoginBean;
