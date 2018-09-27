@@ -3,6 +3,9 @@
     package="com.wd.tech">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
 
     <application
         android:name=".MyApp"
@@ -19,7 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvp.group.activity.GroupChatActivity"></activity>
+        <activity android:name=".mvp.group.activity.GroupChatActivity" />
+        <activity android:name=".mvp.group.activity.AddActivity" />
+        <activity android:name=".mvp.group.activity.PhoneContactsActivity"></activity>
     </application>
 
 </manifest>
