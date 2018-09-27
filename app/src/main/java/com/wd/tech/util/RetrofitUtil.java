@@ -26,6 +26,8 @@ public class RetrofitUtil {
 
     private OkHttpClient buildOkhttpClinet() {
         return new OkHttpClient.Builder()
+                .sslSocketFactory(SSLSocketFactoryUtils.createSSLSocketFactory(), SSLSocketFactoryUtils.createTrustAllManager())
+                .hostnameVerifier(new SSLSocketFactoryUtils.TrustAllHostnameVerifier())
                 .connectTimeout(5, TimeUnit.SECONDS)
                 .readTimeout(5, TimeUnit.SECONDS)
                 .writeTimeout(5, TimeUnit.SECONDS)

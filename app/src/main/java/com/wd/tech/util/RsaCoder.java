@@ -1,7 +1,6 @@
 package com.wd.tech.util;
 
 
-
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
@@ -16,6 +15,8 @@ import javax.crypto.Cipher;
  */
 public class RsaCoder {
 
+    private static String RSA_ANDROID = "RSA/ECB/PKCS1Padding";
+    private static String RSA_JAVA = "RSA/None/PKCS1Padding";
     //非对称密钥算法
     public static final String KEY_ALGORITHM="RSA";
 
@@ -73,7 +74,7 @@ public class RsaCoder {
             String algorithm = keyFactory.getAlgorithm();
             System.out.println(algorithm);
 
-            Cipher cipher=Cipher.getInstance(algorithm);
+            Cipher cipher=Cipher.getInstance(RSA_ANDROID);
             cipher.init(Cipher.DECRYPT_MODE, pubKey);
             String s = new String(cipher.doFinal(datas));
             System.out.println(s);
@@ -108,8 +109,13 @@ public class RsaCoder {
             //产生公钥
             PublicKey pubKey=keyFactory.generatePublic(x509KeySpec);
 
+
+            //数据加密
+            Cipher cipher=Cipher.getInstance(RSA_JAVA);
+
             //数据加密keyFactory.getAlgorithm()
-            Cipher cipher=Cipher.getInstance("RSA/ECB/PKCS1Padding");
+//            Cipher cipher=Cipher.getInstance("RSA/ECB/PKCS1Padding");
+
             cipher.init(Cipher.ENCRYPT_MODE, pubKey);
             return Base64.encode(cipher.doFinal(datas));
         } catch (Exception e) {
@@ -125,7 +131,7 @@ public class RsaCoder {
     public static void main(String[] args) throws Exception {
 
         //公钥加密数据
-        String str2 = encryptByPublicKey("123456");
+        String str2 = encryptByPublicKey("123");
         System.out.println(str2);
 //        Log.e("TAG", "main: "str2);
         //公钥解密数据 解密不行 只能解密服务器返回的数据 不能解密自己加密的数据

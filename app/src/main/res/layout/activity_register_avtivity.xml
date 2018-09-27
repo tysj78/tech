@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".RegisterAvtivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/return1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="9dp"
+
+            android:src="@mipmap/no" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/im" />
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/nickname"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:hint="昵称"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/phone"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@mipmap/phone"
+        android:layout_width="match_parent"
+        android:maxLength="11"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:hint="账号"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/password"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@mipmap/password"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:maxLength="13"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:hint="密码"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textSize="18sp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_selector_reg"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/register"
+        android:text="注册"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#020000"
+        android:layout_marginLeft="21dp"
+        android:text="短信验证码注册"/>
+</LinearLayout>
