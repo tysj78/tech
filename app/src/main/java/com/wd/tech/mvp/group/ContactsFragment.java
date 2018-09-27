@@ -50,9 +50,15 @@ public class ContactsFragment extends Fragment {
         unbinder.unbind();
     }
 
-    @OnClick({R.id.contacts_group, R.id.contacts_add})
-    public void onViewClicked() {
-        startActivity(new Intent(getActivity(), AddActivity.class));
-    }
 
+    @OnClick({R.id.contacts_add, R.id.contacts_group})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.contacts_add:
+                startActivity(new Intent(getActivity(), AddActivity.class));
+                break;
+            case R.id.contacts_group:
+                break;
+        }
+    }
 }
