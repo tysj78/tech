@@ -109,8 +109,13 @@ public class RsaCoder {
             //产生公钥
             PublicKey pubKey=keyFactory.generatePublic(x509KeySpec);
 
+
             //数据加密
             Cipher cipher=Cipher.getInstance(RSA_JAVA);
+
+            //数据加密keyFactory.getAlgorithm()
+//            Cipher cipher=Cipher.getInstance("RSA/ECB/PKCS1Padding");
+
             cipher.init(Cipher.ENCRYPT_MODE, pubKey);
             return Base64.encode(cipher.doFinal(datas));
         } catch (Exception e) {

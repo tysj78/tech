@@ -3,6 +3,7 @@
     package="com.wd.tech">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -19,6 +20,12 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+=======
+    <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
+
+>>>>>>> e3521db108b73dc038c718605a0abd19713aae20
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -54,10 +61,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".mvp.group.activity.GroupChatActivity"></activity>
         <activity android:name=".MainActivity"/>
         <activity android:name=".RegisterAvtivity"/>
         <activity android:name=".RegisterThreeActivity"/>
+=======
+        <activity android:name=".mvp.group.activity.GroupChatActivity" />
+        <activity android:name=".mvp.group.activity.AddActivity" />
+        <activity android:name=".mvp.group.activity.PhoneContactsActivity"></activity>
+>>>>>>> e3521db108b73dc038c718605a0abd19713aae20
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.wd.tech.mvp.group;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.wd.tech.R;
+import com.wd.tech.mvp.group.activity.AddActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +27,8 @@ public class ContactsFragment extends Fragment {
     @BindView(R.id.contacts_elv)
     ExpandableListView contactsElv;
     Unbinder unbinder;
+    @BindView(R.id.contacts_add)
+    TextView contactsAdd;
 
     @Nullable
     @Override
@@ -46,8 +50,15 @@ public class ContactsFragment extends Fragment {
         unbinder.unbind();
     }
 
-    @OnClick(R.id.contacts_group)
-    public void onViewClicked() {
 
+    @OnClick({R.id.contacts_add, R.id.contacts_group})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.contacts_add:
+                startActivity(new Intent(getActivity(), AddActivity.class));
+                break;
+            case R.id.contacts_group:
+                break;
+        }
     }
 }

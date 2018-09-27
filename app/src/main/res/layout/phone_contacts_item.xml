@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/x11"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/phone_contacts_item_img"
+        android:layout_width="@dimen/x35"
+        android:layout_height="@dimen/y31"
+        app:placeholderImage="@mipmap/ic_launcher"
+        app:roundAsCircle="true" />
+
+    <TextView
+        android:id="@+id/phone_contacts_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/phone_contacts_item_img"
+        android:layout_marginLeft="@dimen/x11"
+        android:text="姓名" />
+
+    <TextView
+        android:id="@+id/phone_contacts_item_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x11"
+        android:layout_marginLeft="@dimen/x11"
+        android:layout_toRightOf="@id/phone_contacts_item_img"
+        android:layout_below="@id/phone_contacts_item_name"
+        android:text="电话" />
+</RelativeLayout>
