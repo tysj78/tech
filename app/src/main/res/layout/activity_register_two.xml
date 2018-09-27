@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegisterThreeActivity">
+    tools:context=".RegisterTwoActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="134dp">
 
         <ImageView
             android:id="@+id/return1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="14dp"
             android:layout_marginTop="9dp"
+            android:scaleType="fitXY"
             android:src="@mipmap/no" />
 
         <ImageView
@@ -31,58 +32,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="31dp"
-        android:text="完善你的信息"
+        android:text="设置新密码"
         android:textSize="20sp"
         android:textColor="#000" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="31dp"
-        android:textColor="#919090"
-        android:textSize="12sp"
-        android:text="填写真实姓名有助于匹配，我们将保护你的个人信息"/>
     <EditText
-        android:id="@+id/sex"
+        android:id="@+id/password"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@mipmap/password"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="18dp"
-        android:hint="性别"
-
-        android:paddingLeft="10dp"
-        android:singleLine="true"
-        android:textSize="18sp" />
-    <EditText
-        android:id="@+id/birth"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
-        android:hint="生日"
-        android:paddingLeft="10dp"
-        android:singleLine="true"
-        android:textSize="18sp" />
-    <EditText
-        android:id="@+id/qianmin"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
-        android:hint="签名"
-        android:paddingLeft="10dp"
-        android:singleLine="true"
-        android:textSize="18sp" />
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
-        android:hint="邮箱"
+        android:hint="在这里输入密码"
+        android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:singleLine="true"
         android:textSize="18sp" />
@@ -97,7 +60,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
         android:id="@+id/next"
-        android:text="开启你的科技之旅吧"
+        android:text="下一步"
         android:textColor="#fff"
         android:textSize="18sp" />
 

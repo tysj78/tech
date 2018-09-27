@@ -8,6 +8,8 @@ import com.wd.tech.bean.ModifySignatureBean;
 import com.wd.tech.bean.PerfectUserInfoBean;
 import com.wd.tech.bean.RegisterUserBean;
 
+import java.util.Date;
+
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import retrofit2.http.Field;
@@ -34,7 +36,7 @@ public interface ApiService {
                                                     @Field("nickName") String nickName,
                                                     @Field("sex") int sex,
                                                     @Field("signature") String signature,
-                                                    @Field("birthday") long birthday,
+                                                    @Field("birthday") String birthday,
                                                     @Field("email") String email);
     //3.2登陆
     @FormUrlEncoded

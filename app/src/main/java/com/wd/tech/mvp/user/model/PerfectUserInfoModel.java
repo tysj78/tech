@@ -2,8 +2,11 @@ package com.wd.tech.mvp.user.model;
 
 import com.wd.tech.api.ApiService;
 import com.wd.tech.base.BaseModel;
-import com.wd.tech.bean.GetUserInfoByUserIdBean;
+import com.wd.tech.bean.PerfectUserInfoBean;
+import com.wd.tech.bean.RegisterUserBean;
 import com.wd.tech.util.RetrofitUtil;
+
+import java.util.Date;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -14,23 +17,23 @@ import io.reactivex.schedulers.Schedulers;
 /*
  * 注册功能的model
  * */
-public class GetUserInfoByUserIdModel extends BaseModel {
-    public void getUserInfoByUserId(int userId, String sessionId,  final IGetUserInfoByUserIdModel listener){
+public class PerfectUserInfoModel extends BaseModel {
+    public void perfectUserInfo(int userid, String sessionId, String nickName, int sex, String signature, String birthday, String email, final IPerfectUserInfoModel listener){
 
-        Observable<GetUserInfoByUserIdBean> observable = RetrofitUtil.getDefault().create(ApiService.class).getUserInfoByUserId(userId,sessionId);
+        Observable<PerfectUserInfoBean> observable = RetrofitUtil.getDefault().create(ApiService.class).perfectUserInfo(userid,sessionId,nickName,sex,signature,birthday,email);
 
         observable.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<GetUserInfoByUserIdBean>() {
+                .subscribe(new Observer<PerfectUserInfoBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(GetUserInfoByUserIdBean Bean) {
-                        listener.ongetUserInfoByUserId(Bean);
+                    public void onNext(PerfectUserInfoBean bean) {
+                        listener.onPerfectUserInfo(bean);
                     }
 
                     @Override
