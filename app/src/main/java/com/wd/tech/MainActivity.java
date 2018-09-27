@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 .addTabItem("通讯录", R.drawable.txl, ContactsFragment.class)
                 .addTabItem("设置", R.drawable.set, SetFragment.class)
                 .isShowDivider(false);
+        //zxc1111dada
     }
 
     //沉浸式，颜色可以根据需要修改
