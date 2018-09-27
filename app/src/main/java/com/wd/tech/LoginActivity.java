@@ -1,6 +1,7 @@
 package com.wd.tech;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +11,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.adapter.EMAChatClient;
 import com.wd.tech.base.BaseActivity;
 import com.wd.tech.bean.GetUserInfoByUserIdBean;
 import com.wd.tech.bean.LoginBean;
@@ -17,6 +21,7 @@ import com.wd.tech.mvp.user.presenter.GetUserInfoByUserIdPresenter;
 import com.wd.tech.mvp.user.presenter.LoginPresenter;
 import com.wd.tech.mvp.user.view.IGetUserInfoByUserIdView;
 import com.wd.tech.mvp.user.view.LoginView;
+import com.wd.tech.util.RsaCoder;
 import com.wd.tech.util.SharedPreferencesUtils;
 
 import butterknife.BindView;
@@ -45,6 +50,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @BindView(R.id.login_linear)
     LinearLayout loginLinear;
     private LoginPresenter loginPresenter;
+    private String sessionId;
+    private int userId;
+    private String nickName;
+    private String pwd;
+    private String phone;
 
     @Override
     protected void initView() {
@@ -103,20 +113,45 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     public void getData(LoginBean loginBean) {
         LoginBean.ResultBean result = loginBean.getResult();
-        String sessionId = result.getSessionId();
-        int userId = result.getUserId();
-        String nickName = result.getNickName();
-        String pwd = result.getPwd();
-        SharedPreferencesUtils.setParam(this,"userId",userId);
-        SharedPreferencesUtils.setParam(this,"sessionId",sessionId);
-        SharedPreferencesUtils.setParam(this,"nickName",nickName);
+        if (loginBean.getStatus().equals("0000")) {
+            sessionId = result.getSessionId();
+            userId = result.getUserId();
+            nickName = result.getNickName();
+            phone = result.getPhone();
+            try {
+                pwd = RsaCoder.decryptByPublicKey(result.getPwd());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            SharedPreferencesUtils.setParam(this,"userId",userId);
+            SharedPreferencesUtils.setParam(this,"sessionId",sessionId);
+            SharedPreferencesUtils.setParam(this,"nickName",nickName);
+        }
+
 
         Toast.makeText(this,loginBean.getMessage(),Toast.LENGTH_SHORT).show();
         if (loginBean.getMessage().equals("登录成功")) {
-            GetUserInfoByUserIdPresenter presenter=new GetUserInfoByUserIdPresenter(this);
+
+
+//            EMClient.getInstance().login(phone, pwd, new EMCallBack() {
+//                @Override
+//                public void onSuccess() {
+//                    Log.i("TAG", "登录服务器成功");
+//
+//                }
+//
+//                @Override
+//                public void onError(int code, String error) {
+//        Log.i("TAG",error);
+//                }
+//
+//                @Override
+//                public void onProgress(int progress, String status) {
+//                    Log.i("TAG",status);
+//                }
+//            });
+            GetUserInfoByUserIdPresenter presenter=new GetUserInfoByUserIdPresenter(LoginActivity.this);
             presenter.getUserInfoByUserId(userId,sessionId);
-        }else {
-            Toast.makeText(this,"登录失败",Toast.LENGTH_SHORT).show();
         }
     }
 
