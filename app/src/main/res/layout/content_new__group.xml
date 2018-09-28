@@ -9,22 +9,22 @@
     <!--群聊名称-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="16dp"
+        android:layout_height="@dimen/x40"
+        android:layout_margin="@dimen/x16"
         android:background="@drawable/ba_font"
         android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:layout_margin="1dp"
+            android:layout_height="@dimen/x38"
+            android:layout_margin="@dimen/x1"
             android:background="@drawable/ba_font_0">
 
             <EditText
                 android:id="@+id/new_iclmt_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="@dimen/x5"
                 android:background="@null"
                 android:hint="群聊名称" />
 
@@ -34,24 +34,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="@dimen/x16"
+        android:layout_marginRight="@dimen/x16"
         android:layout_marginTop="-5dp"
         android:background="@drawable/ba_font"
         android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="1dp"
+            android:layout_height="@dimen/x100"
+            android:layout_margin="@dimen/x1"
             android:background="@drawable/ba_font_0">
 
             <EditText
                 android:id="@+id/new_iclmt_jianjie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/x5"
+                android:layout_marginTop="@dimen/x10"
                 android:background="@null"
                 android:hint="群聊简介" />
 
@@ -61,24 +61,24 @@
     <!--群聊名称-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/x40"
+        android:layout_marginLeft="@dimen/x16"
+        android:layout_marginRight="@dimen/x16"
+        android:layout_marginTop="@dimen/x10"
         android:background="@drawable/ba_font"
         android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:layout_margin="1dp"
+            android:layout_height="@dimen/x38"
+            android:layout_margin="@dimen/x1"
             android:background="@drawable/ba_font_0"
             android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="@dimen/x5"
                 android:background="@null"
                 android:text="是否公开" />
 
@@ -96,17 +96,17 @@
     <!--群聊名称-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/x40"
+        android:layout_marginLeft="@dimen/x16"
+        android:layout_marginRight="@dimen/x16"
+        android:layout_marginTop="@dimen/x10"
         android:background="@drawable/ba_font"
         android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:layout_margin="1dp"
+            android:layout_height="@dimen/x38"
+            android:layout_margin="@dimen/x1"
             android:background="@drawable/ba_font_0"
             android:gravity="center_vertical">
 
@@ -114,7 +114,7 @@
                 android:id="@+id/new_iclmt_che2_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="@dimen/x5"
                 android:background="@null"
                 android:text="开放群成员邀请" />
 
