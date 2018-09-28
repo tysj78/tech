@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">tech</string>
+    <string name="title_activity_new__group">New_GroupActivity</string>
 </resources>

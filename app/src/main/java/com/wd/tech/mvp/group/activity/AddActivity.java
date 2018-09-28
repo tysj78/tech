@@ -15,7 +15,7 @@ public class AddActivity extends AppCompatActivity {
 
     @BindView(R.id.add_phone_contacts)
     TextView addPhoneContacts;
-
+//新建群组
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

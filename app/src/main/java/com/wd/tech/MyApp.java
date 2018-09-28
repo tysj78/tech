@@ -13,6 +13,7 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
 
+        Fresco.initialize(this);
 //        EMOptions options = new EMOptions();
 //
 //        EMClient.getInstance().init(getApplicationContext(), options);
