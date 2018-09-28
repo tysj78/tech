@@ -15,6 +15,7 @@ import com.wd.tech.mvp.group.mvp.presenter.GroupChatPresenter;
 import com.wd.tech.mvp.group.mvp.view.GroupChatView;
 import com.wd.tech.util.SharedPreferencesUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -30,7 +31,7 @@ public class GroupChatActivity extends BaseActivity<GroupChatPresenter> implemen
     private int userId;
     private String sessionId;
     private GroupListAdapter listAdapter;
-
+    private List<JoinedGroup.ResultBean> list = new ArrayList<>();
 
     @OnClick(R.id.groupchat_creategroup)
     public void onViewClicked() {
@@ -82,8 +83,10 @@ public class GroupChatActivity extends BaseActivity<GroupChatPresenter> implemen
         String status = joinedGroup.getStatus();
         if (status.equals("0000")) {
             List<JoinedGroup.ResultBean> result = joinedGroup.getResult();
+            list.clear();
+            list.addAll(result);
             if (listAdapter == null) {
-                listAdapter = new GroupListAdapter(result);
+                listAdapter = new GroupListAdapter(list);
                 groupchatGrouplist.setAdapter(listAdapter);
             } else {
                 listAdapter.notifyDataSetChanged();
