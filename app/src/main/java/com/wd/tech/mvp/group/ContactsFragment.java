@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.wd.tech.R;
@@ -22,10 +21,10 @@ import butterknife.Unbinder;
  * author:Created by YangYong on 2018/9/24 0024.
  */
 public class ContactsFragment extends Fragment {
-    @BindView(R.id.contacts_group)
-    TextView contactsGroup;
-    @BindView(R.id.contacts_elv)
-    ExpandableListView contactsElv;
+//    @BindView(R.id.contacts_group)
+//    TextView contactsGroup;
+//    @BindView(R.id.contacts_elv)
+//    ExpandableListView contactsElv;
     Unbinder unbinder;
     @BindView(R.id.contacts_add)
     TextView contactsAdd;
@@ -51,14 +50,14 @@ public class ContactsFragment extends Fragment {
     }
 
 
-    @OnClick({R.id.contacts_add, R.id.contacts_group})
+    @OnClick({R.id.contacts_add})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.contacts_add:
                 startActivity(new Intent(getActivity(), AddActivity.class));
                 break;
-            case R.id.contacts_group:
-                break;
+//            case R.id.contacts_group:
+//                break;
         }
     }
 }
