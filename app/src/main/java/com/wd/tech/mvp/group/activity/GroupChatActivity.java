@@ -24,6 +24,7 @@ public class GroupChatActivity extends AppCompatActivity {
 
     @OnClick(R.id.groupchat_creategroup)
     public void onViewClicked() {
+        //跳转到创建群聊页面
 
     }
 }
