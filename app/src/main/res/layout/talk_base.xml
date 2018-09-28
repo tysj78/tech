@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+    <RelativeLayout
+        android:id="@+id/left_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        >
+        <ImageView
+            android:id="@+id/zt"
+            android:background="@drawable/my"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/left_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/zt"
+            android:layout_gravity="center"
+            android:layout_toEndOf="@+id/zt"
+            android:background="@drawable/app_lvjian_other_chat_background"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/right_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+
+        >
+
+        <ImageView
+            android:id="@+id/yt"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/my" />
+
+        <TextView
+            android:id="@+id/right_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/yt"
+            android:layout_gravity="center"
+            android:layout_toStartOf="@+id/yt"
+            android:background="@drawable/app_lvjian_chat_right" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>
