@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 .addTabItem("设置", R.drawable.set, SetFragment.class)
                 .isShowDivider(false);
         //zxc1111dada
+        //szx的提交
     }
 
     //沉浸式，颜色可以根据需要修改
