@@ -10,6 +10,7 @@ import com.wd.tech.R;
 import com.wd.tech.adapter.GroupListAdapter;
 import com.wd.tech.base.BaseActivity;
 import com.wd.tech.bean.JoinedGroup;
+import com.wd.tech.mvp.group.mvp.model.bean.NewGroupBean;
 import com.wd.tech.mvp.group.mvp.presenter.GroupChatPresenter;
 import com.wd.tech.mvp.group.mvp.view.GroupChatView;
 import com.wd.tech.util.SharedPreferencesUtils;
@@ -36,7 +37,7 @@ public class GroupChatActivity extends BaseActivity<GroupChatPresenter> implemen
     public void onViewClicked() {
         //跳转到创建群聊页面
 
-        Intent intent = new Intent(this, New_GroupActivity.class);
+        Intent intent=new Intent(this,NewgroupActivity.class);
         startActivity(intent);
     }
 
@@ -91,6 +92,11 @@ public class GroupChatActivity extends BaseActivity<GroupChatPresenter> implemen
                 listAdapter.notifyDataSetChanged();
             }
         }
+    }
+
+    @Override
+    public void getnewGroup(NewGroupBean newGroupBean) {
+
     }
 
     @Override
