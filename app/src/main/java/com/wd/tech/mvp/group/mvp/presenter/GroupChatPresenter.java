@@ -27,21 +27,8 @@ public class GroupChatPresenter extends BasePresenter<GroupChatModel, GroupChatV
         return new GroupChatModel();
     }
 
-    public void getJoinedGroup(int userId, String sessionId,String name,String description) {
-        if(name!=null){
-            model.getNewGroupOk(userId, sessionId,name,description, new GroupChatCallBack() {
-                @Override
-                public void getJoinedGroup(JoinedGroup joinedGroup) {
-                }
+    public void getJoinedGroup(int userId, String sessionId) {
 
-                @Override
-                public void getnewGroup(NewGroupBean newGroupBean) {
-                    view.getnewGroup(newGroupBean);
-                }
-
-
-            });
-        }
         model.getJoinedGroup(userId, sessionId, new GroupChatCallBack() {
             @Override
             public void getJoinedGroup(JoinedGroup joinedGroup) {
@@ -56,5 +43,23 @@ public class GroupChatPresenter extends BasePresenter<GroupChatModel, GroupChatV
 
         });
 
+    }
+    //創建群
+    public void getNew_Group(int userId, String sessionId,String name,String description) {
+
+        if(name!=null){
+            model.getNewGroupOk(userId, sessionId,name,description, new GroupChatCallBack() {
+                @Override
+                public void getJoinedGroup(JoinedGroup joinedGroup) {
+                }
+
+                @Override
+                public void getnewGroup(NewGroupBean newGroupBean) {
+                    view.getnewGroup(newGroupBean);
+                }
+
+
+            });
+        }
     }
 }
