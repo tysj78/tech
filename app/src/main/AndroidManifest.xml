@@ -75,6 +75,7 @@
         <activity android:name=".mvp.group.activity.AddActivity" />
         <activity android:name=".mvp.group.activity.PhoneContactsActivity" />
         <activity android:name=".mvp.chat.TalkActivity"></activity>
+        <activity android:name=".mvp.group.activity.New_GroupActivity"></activity>
     </application>
 
 </manifest>
