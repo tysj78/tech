@@ -4,6 +4,7 @@ import com.wd.tech.base.BasePresenter;
 import com.wd.tech.bean.JoinedGroup;
 import com.wd.tech.mvp.group.mvp.model.GroupChatCallBack;
 import com.wd.tech.mvp.group.mvp.model.GroupChatModel;
+import com.wd.tech.mvp.group.mvp.model.bean.NewGroupBean;
 import com.wd.tech.mvp.group.mvp.view.GroupChatView;
 
 import java.lang.ref.WeakReference;
@@ -26,12 +27,34 @@ public class GroupChatPresenter extends BasePresenter<GroupChatModel, GroupChatV
         return new GroupChatModel();
     }
 
-    public void getJoinedGroup(int userId, String sessionId) {
+    public void getJoinedGroup(int userId, String sessionId,String name,String description) {
+        if(name!=null){
+            model.getNewGroupOk(userId, sessionId,name,description, new GroupChatCallBack() {
+                @Override
+                public void getJoinedGroup(JoinedGroup joinedGroup) {
+                }
+
+                @Override
+                public void getnewGroup(NewGroupBean newGroupBean) {
+                    view.getnewGroup(newGroupBean);
+                }
+
+
+            });
+        }
         model.getJoinedGroup(userId, sessionId, new GroupChatCallBack() {
             @Override
             public void getJoinedGroup(JoinedGroup joinedGroup) {
                 view.getJoinedGroup(joinedGroup);
             }
+
+            @Override
+            public void getnewGroup(NewGroupBean newGroupBean) {
+
+            }
+
+
         });
+
     }
 }

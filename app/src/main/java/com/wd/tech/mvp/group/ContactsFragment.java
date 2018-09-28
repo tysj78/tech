@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.TextView;
 
 import com.wd.tech.R;
@@ -50,6 +51,11 @@ public class ContactsFragment extends Fragment {
         unbinder.unbind();
     }
 
+    @Override
+    public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
+
+        return super.onCreateAnimation(transit, enter, nextAnim);
+    }
 
     @OnClick({R.id.contacts_add, R.id.contacts_group})
     public void onViewClicked(View view) {

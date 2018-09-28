@@ -60,7 +60,6 @@
             </intent-filter>
         </receiver>
 
-
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -74,8 +73,8 @@
         <activity android:name=".RegisterThreeActivity" />
         <activity android:name=".mvp.group.activity.AddActivity" />
         <activity android:name=".mvp.group.activity.PhoneContactsActivity" />
-        <activity android:name=".mvp.chat.TalkActivity"></activity>
-        <activity android:name=".mvp.group.activity.New_GroupActivity"></activity>
+        <activity android:name=".mvp.chat.TalkActivity" />
+        <activity android:name=".mvp.group.activity.NewgroupActivity"></activity>
     </application>
 
 </manifest>
