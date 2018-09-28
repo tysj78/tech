@@ -160,6 +160,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         }else {
             Intent intent=new Intent(this,MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 }
