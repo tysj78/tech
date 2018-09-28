@@ -55,7 +55,7 @@ public class GroupChatActivity extends BaseActivity<GroupChatPresenter> implemen
     @Override
     protected void onResume() {
         super.onResume();
-        presenter.getJoinedGroup(userId, sessionId,null,null);
+        presenter.getJoinedGroup(userId, sessionId);
     }
 
     private void initGroupList() {

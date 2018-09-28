@@ -60,7 +60,7 @@ public class NewgroupActivity extends BaseActivity<GroupChatPresenter> implement
                 }else if(briefintroduction.equalsIgnoreCase("")){
                     Toast.makeText(this,"簡介不能爲空",Toast.LENGTH_LONG).show();
                 }else{
-                    presenter.getJoinedGroup( userId,  sessionId, title, briefintroduction);
+                    presenter.getNew_Group( userId,  sessionId, title, briefintroduction);
                 }
                 break;
             case R.id.new_iclmt_che1:
